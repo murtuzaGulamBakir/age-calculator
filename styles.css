@@ -1,0 +1,233 @@
+:root {
+    /* Primary Colors */
+    --color-purple: hsl(259, 100%, 65%);
+    --color-light-red: hsl(0, 100%, 67%);
+
+    /* Neutral Colors */
+    --color-white: hsl(0, 0%, 100%);
+    --color-off-white: hsl(0, 0%, 94%);
+    --color-light-grey: hsl(0, 0%, 86%);
+    --color-smokey-grey: hsl(0, 1%, 44%);
+    --color-off-black: hsl(0, 0%, 8%);
+
+    /* Typography */
+    --font-size-body-input: 32px;
+}
+@font-face {
+    font-family: "PoppinsRegular";
+    src: url("./assets/fonts/Poppins-Regular.ttf") format("truetype"); /* Update the path if needed */
+}
+
+@font-face {
+    font-family: "PoppinsBold";
+    src: url("./assets/fonts/Poppins-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "PoppinsExtraBold";
+    src: url("./assets/fonts/Poppins-ExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "PoppinsExtraBoldItalic";
+    src: url("./assets/fonts/Poppins-ExtraBoldItalic.ttf") format("truetype");
+}
+@font-face {
+    font-family: "PoppinsItalic";
+    src: url("./assets/fonts/Poppins-Italic.ttf") format("truetype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: PoppinsRegular;
+    background: var(--color-off-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 730px;
+    background: var(--color-white);
+    border-radius: 20px;
+    border-bottom-right-radius: 30%;
+    padding: 40px 45px;
+}
+
+.input-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 150px);
+    column-gap: 30px;
+    margin-bottom: 40px;
+}
+
+.field > label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--color-smokey-grey);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-family: PoppinsBold;
+    font-size: 12px;
+}
+
+.field > label.invalid {
+    color: var(--color-light-red);
+}
+
+.field > input {
+    display: block;
+    width: 100%;
+    font-family: PoppinsBold;
+    font-size: 30px;
+    margin-bottom: 5px;
+    padding: 6px 14px;
+    border-radius: 8px;
+    color: var(--color-off-black);
+    border: 1px solid var(--color-light-grey);
+    outline: none;
+}
+
+.field > input:focus {
+    outline: 1px solid var(--color-purple);
+    opacity: 1;
+}
+
+.field > input::placeholder {
+    color: var(--color-smokey-grey);
+    opacity: 0.8;
+}
+
+.arrow {
+    position: relative;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.arrow .line {
+    border: 1px solid var(--color-light-grey);
+    width: 100%;
+}
+
+.arrow img {
+    width: 70px;
+    height: 70px;
+    padding: 18px;
+    border-radius: 50%;
+    background-color: var(--color-purple);
+    position: absolute;
+    right: 0px;
+    bottom: -35px;
+}
+
+.age {
+    font-size: 4.3rem;
+    color: var(--color-off-black);
+    font-family: PoppinsExtraBoldItalic;
+}
+
+.age span {
+    color: var(--color-purple);
+    font-family: PoppinsExtraBold;
+}
+
+#day.invalid,
+#month.invalid,
+#year.invalid {
+    border: 1px solid var(--color-light-red);
+    outline: none;
+}
+
+.error {
+    margin-left: 5px;
+    color: var(--color-light-red);
+    font-size: 12px;
+    position: absolute;
+    font-family: PoppinsItalic;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: calc(100% - 150px);
+    }
+
+    .input-wrapper {
+        width: calc(100% - 70px);
+        column-gap: 18px;
+    }
+
+    .field > input {
+        font-size: 28px;
+        padding: 6px 10px;
+    }
+
+    .age {
+        font-size: 3.9rem;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .container {
+        width: calc(100% - 50px);
+    }
+
+    .input-wrapper {
+        width: calc(100% - 40px);
+        column-gap: 15px;
+    }
+
+    .field > input {
+        font-size: 26px;
+        padding: 6px 10px;
+    }
+
+    .age {
+        font-size: 3.3rem;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .container {
+        width: calc(100% - 15px);
+        padding: 25px 20px;
+    }
+
+    .input-wrapper {
+        width: calc(100% - 30px);
+        column-gap: 12px;
+    }
+
+    .field > input {
+        font-size: 21px;
+        margin-bottom: 5px;
+        padding: 7px 8px;
+    }
+
+    .field > label {
+        font-size: 10px;
+    }
+
+    .age {
+        font-size: 2.9rem;
+    }
+
+    .error {
+        margin-left: 1px;
+        font-size: 8px;
+    }
+
+    .arrow img {
+        width: 60px;
+        height: 60px;
+        padding: 12px;
+        bottom: -30px;
+    }
+}

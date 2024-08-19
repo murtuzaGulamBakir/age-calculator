@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 [this.dayInput, this.monthInput, this.yearInput].forEach((element) => {
                     this.markInvalid(element, "Invalid date");
                 });
+                return;
             }
 
             return new Date(year, month, day);
